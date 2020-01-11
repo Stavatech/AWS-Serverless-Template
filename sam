@@ -1,0 +1,7 @@
+sam package \
+    --output-template-file packaged.yaml \
+    --s3-bucket sam-deploy-stavaza \
+&& sam deploy \
+    --template-file packaged.yaml \
+    --stack-name employees \
+    --capabilities CAPABILITY_IAM
