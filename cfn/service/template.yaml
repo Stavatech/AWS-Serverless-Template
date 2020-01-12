@@ -32,7 +32,7 @@ Resources:
   ListEmployeesFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: app/
+      CodeUri: ../../app/
       Handler: handlers.list_employees
       Runtime: python3.7
       Role: 
@@ -45,31 +45,31 @@ Resources:
             Method: get
 
   PatchEmployeeFunction:
-    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Type: AWS::Serverless::Function 
     Properties:
-      CodeUri: app/
+      CodeUri: ../../app/
       Handler: handlers.patch_employee
       Runtime: python3.7
       Role: 
         !GetAtt LambdaRole.Arn
       Events:
         RestApi:
-          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Type: Api
           Properties:
             Path: /employees/{employee_id}
             Method: patch
 
   GetEmployeeFunction:
-    Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+    Type: AWS::Serverless::Function 
     Properties:
-      CodeUri: app/
+      CodeUri: ../../app/
       Handler: handlers.get_employee
       Runtime: python3.7
       Role: 
         !GetAtt LambdaRole.Arn
       Events:
         RestApi:
-          Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
+          Type: Api 
           Properties:
             Path: /employees/{employee_id}
             Method: get

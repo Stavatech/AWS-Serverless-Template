@@ -1,7 +1,8 @@
 sam package \
+    --template-file cfn/service/template.yaml \
     --output-template-file packaged.yaml \
-    --s3-bucket sam-deploy-stavaza \
+    --s3-bucket {{ deployment_bucket }} \
 && sam deploy \
     --template-file packaged.yaml \
-    --stack-name employees \
+    --stack-name {{ project_name }} \
     --capabilities CAPABILITY_IAM

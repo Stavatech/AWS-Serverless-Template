@@ -1,0 +1,9 @@
+import os
+
+
+project_name = "{{ project_name }}"
+
+github_repo = "{{ project_name }}"
+github_owner = "{{ git_owner }}"
+github_token = os.getenv('GITHUB_TOKEN')
+git_branch = "{{ git_branch }}"
