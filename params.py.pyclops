@@ -7,3 +7,14 @@ github_repo = "{{ project_name }}"
 github_owner = "{{ git_owner }}"
 github_token = os.getenv('GITHUB_TOKEN')
 git_branch = "{{ git_branch }}"
+
+s3_deployment_bucket = "{{ s3_deployment_bucket }}
+
+"""
+The 'stages' parameter is a special parameter where stage-specific values can be
+specified. These stage-specific values are accessed in the service.config.json.jinja
+templates using 'stage_<param_name>' e.g. stage_container_count, stage_container_port, etc.
+"""
+stages = {
+    "staging": { }
+}

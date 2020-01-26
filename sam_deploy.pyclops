@@ -1,7 +1,7 @@
 sam package \
     --template-file cfn/service/template.yaml \
     --output-template-file packaged.yaml \
-    --s3-bucket {{ deployment_bucket }} \
+    --s3-bucket {{ s3_deployment_bucket }} \
 && sam deploy \
     --template-file packaged.yaml \
     --stack-name {{ project_name }} \
