@@ -8,7 +8,7 @@ github_owner = "{{ git_owner }}"
 github_token = os.getenv('GITHUB_TOKEN')
 git_branch = "{{ git_branch }}"
 
-s3_deployment_bucket = "{{ s3_deployment_bucket }}
+s3_deployment_bucket = "{{ s3_deployment_bucket }}"
 
 """
 The 'stages' parameter is a special parameter where stage-specific values can be
